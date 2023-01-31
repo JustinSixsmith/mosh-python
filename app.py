@@ -50,12 +50,21 @@ import math
 # y = int(x) + 1
 # print(f"x: {x}, y: {y}")
 
-temperature = 21
-if (temperature > 30):
-    print("It's warm")
-    print("Drink water")
-elif (temperature > 20):
-    print("It's nice")
-else:
-    print("It's cold")
-print("Done")
+# temperature = 21
+# if (temperature > 30):
+#     print("It's warm")
+#     print("Drink water")
+# elif (temperature > 20):
+#     print("It's nice")
+# else:
+#     print("It's cold")
+# print("Done")
+
+age = 17
+# if (age >= 18):
+#     message = "Eligible"
+# else:
+#     message = "Not eligible"
+
+message = "Eligible" if age >= 18 else "Not eligible"
+print(message)
