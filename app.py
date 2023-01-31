@@ -1,3 +1,5 @@
+import math
+
 # students_count = 1000
 # rating = 4.9
 # print(students_count)
@@ -27,13 +29,23 @@
 # x = 1.1
 # x = 1 + 2j  # a + bi
 
-print(10 + 3)
-print(10 - 3)
-print(10 * 3)
-print(10 / 3)
-print(10 // 3)
-print(10 % 3)
-print(10 ** 3)
+# print(10 + 3)
+# print(10 - 3)
+# print(10 * 3)
+# print(10 / 3)
+# print(10 // 3)
+# print(10 % 3)
+# print(10 ** 3)
 
-x = 10
-x += 3
+# x = 10
+# x += 3
+# print(round(2.9))
+# print(abs(-2.9))
+
+# print(math.ceil(2.2))
+# print(math.fabs(2.2))
+
+# x = input("x: ")
+# print(type(x))
+# y = int(x) + 1
+# print(f"x: {x}, y: {y}")
