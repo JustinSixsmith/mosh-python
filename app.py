@@ -13,12 +13,27 @@
 # full = f"{first} {last}"
 # print(full)
 
-course = "  python programming"
-print(course.upper())
-print(course.lower())
-print(course.title())
-print(course.strip())
-print(course.find("pro"))
-print(course.replace("p", "j"))
-print("pro" in course)
-print("swift" not in course)
+# course = "  python programming"
+# print(course.upper())
+# print(course.lower())
+# print(course.title())
+# print(course.strip())
+# print(course.find("pro"))
+# print(course.replace("p", "j"))
+# print("pro" in course)
+# print("swift" not in course)
+
+# x = 1
+# x = 1.1
+# x = 1 + 2j  # a + bi
+
+print(10 + 3)
+print(10 - 3)
+print(10 * 3)
+print(10 / 3)
+print(10 // 3)
+print(10 % 3)
+print(10 ** 3)
+
+x = 10
+x += 3
