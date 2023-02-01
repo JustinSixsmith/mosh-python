@@ -115,7 +115,8 @@ import math
 #     print(number)
 #     number //= 2
 
-command = ""
-while command != "quit":
+while True:
     command = input(">")
     print("ECHO", command)
+    if command.lower() == "quit":
+        break
