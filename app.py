@@ -1,12 +1,27 @@
 import math
 
 
-def greet(first_name, last_name):
-    print(f"Hi {first_name} {last_name}")
-    print("Welcome aboard")
+def increment(number, by):
+    return number + by
 
 
-greet("Justin", "Sixsmith")
+print(increment(2, by=1))
+
+
+# def greet(first_name, last_name):
+#     print(f"Hi {first_name} {last_name}")
+#     print("Welcome aboard")
+
+
+# greet("Justin", "Sixsmith")
+
+
+# def get_greeting(name):
+#     return f"Hi {name}"
+
+# message = get_greeting("Justin")
+# file = open("content.txt", "w")
+# file.write(message)
 
 # students_count = 1000
 # rating = 4.9
