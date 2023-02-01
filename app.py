@@ -82,5 +82,14 @@ import math
 # if 18 <= age <= 65:
 #     print("Eligible")
 
-for number in range(1, 10, 2):
-    print("Attempt", number, (number + 1) * ".")
+# for number in range(1, 10, 2):
+#     print("Attempt", number, (number + 1) * ".")
+
+successful = True
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times and failed")
