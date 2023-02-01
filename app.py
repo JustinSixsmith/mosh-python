@@ -60,11 +60,21 @@ import math
 #     print("It's cold")
 # print("Done")
 
-age = 17
+# age = 17
 # if (age >= 18):
 #     message = "Eligible"
 # else:
 #     message = "Not eligible"
 
-message = "Eligible" if age >= 18 else "Not eligible"
-print(message)
+# age = 17
+# message = "Eligible" if age >= 18 else "Not eligible"
+# print(message)
+
+high_income = True
+good_credit = True
+student = False
+
+if (high_income or good_credit) and not student:
+    print("Eligible")
+else:
+    print("Not eligible")
