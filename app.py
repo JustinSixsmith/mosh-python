@@ -94,6 +94,28 @@ import math
 # else:
 #     print("Attempted 3 times and failed")
 
-for x in range(5):
-    for y in range(3):
-        print(f"({x}, {y})")
+# for x in range(5):
+#     for y in range(3):
+#         print(f"({x}, {y})")
+
+# print(type(5))
+# print(type(range(5)))
+
+# for x in "Python":
+#     print(x)
+
+# for x in [1, 2, 3, 4]:
+#     print(x)
+
+# for item in shopping_cart:
+#     print(item)
+
+# number = 100
+# while number > 0:
+#     print(number)
+#     number //= 2
+
+command = ""
+while command != "quit":
+    command = input(">")
+    print("ECHO", command)
