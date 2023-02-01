@@ -1,12 +1,12 @@
 import math
 
 
-def greet():
-    print("Hi there")
+def greet(first_name, last_name):
+    print(f"Hi {first_name} {last_name}")
     print("Welcome aboard")
 
 
-greet()
+greet("Justin", "Sixsmith")
 
 # students_count = 1000
 # rating = 4.9
