@@ -1,5 +1,13 @@
 import math
 
+
+def greet():
+    print("Hi there")
+    print("Welcome aboard")
+
+
+greet()
+
 # students_count = 1000
 # rating = 4.9
 # print(students_count)
@@ -121,9 +129,9 @@ import math
 #     if command.lower() == "quit":
 #         break
 
-count = 0
-for number in range(1, 10 + 1):
-    if number % 2 == 0:
-        print(number)
-        count += 1
-print(f"We have {count} even numbers")
+# count = 0
+# for number in range(1, 10):
+#     if number % 2 == 0:
+#         print(number)
+#         count += 1
+# print(f"We have {count} even numbers")
