@@ -78,6 +78,9 @@ import math
 #     print("Eligible")
 
 # age should be between 18 and 65
-age = 22
-if 18 <= age <= 65:
-    print("Eligible")
+# age = 22
+# if 18 <= age <= 65:
+#     print("Eligible")
+
+for number in range(1, 10, 2):
+    print("Attempt", number, (number + 1) * ".")
