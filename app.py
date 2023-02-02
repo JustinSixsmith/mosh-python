@@ -1,11 +1,11 @@
 import math
 
 
-def increment(number, by):
+def increment(number, by=1):
     return number + by
 
 
-print(increment(2, by=1))
+print(increment(2, 5))
 
 
 # def greet(first_name, last_name):
