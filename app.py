@@ -1,17 +1,41 @@
 import math
 
 
-def save_user(**user):
-    print(user)
+def fizz_buzz(input):
+    if input % 3 == 0 and input % 5 == 0:
+        return "FizzBuzz"
+    elif input % 3 == 0:
+        return "Fizz"
+    elif input % 5 == 0:
+        return "Buzz"
+    else:
+        return input
 
 
-save_user(id=1, name="John", age=22)
+print(fizz_buzz(7))
+
+
+# def greet():
+#     message = "a"
+
+# print(name)
+
+
+# def save_user(**user):
+#     print(user["name"])
+
+
+# save_user(id=1, name="John", age=22)
 
 # def multiply(*numbers):
 #     total = 1
 #     for number in numbers:
 #         total *= number
-#     return total
+#         return total
+
+
+# print("Start")
+# print(multiply(1, 2, 3))
 
 
 # print(multiply(2, 3, 4, 5))
