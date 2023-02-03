@@ -1,10 +1,20 @@
 import math
 
 letters = ["a", "b", "c"]
-items = (0, "a")
-index, letter = items
-for index, letter in enumerate(letters):
-    print(index, letter)
+
+letters.append("d")
+letters.insert(0, "-")
+print(letters)
+
+letters.pop(0)
+letters.remove("b")
+del letters[0:3]
+letters.clear()
+print(letters)
+
+
+# for index, letter in enumerate(letters):
+#     print(index, letter)
 
 
 # numbers = [1, 2, 3, 4, 4, 4, 4, 4]
