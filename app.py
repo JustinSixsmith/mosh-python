@@ -1,8 +1,21 @@
 import math
 
-numbers = list(range(20))
-print(numbers[::2])
-print(numbers[::-1])
+letters = ["a", "b", "c"]
+items = (0, "a")
+index, letter = items
+for index, letter in enumerate(letters):
+    print(index, letter)
+
+
+# numbers = [1, 2, 3, 4, 4, 4, 4, 4]
+# first, *other, last = numbers
+# print(first, last)
+# print(other)
+
+
+# numbers = list(range(20))
+# print(numbers[::2])
+# print(numbers[::-1])
 
 
 # letters = ["a", "b", "c", "d"]
