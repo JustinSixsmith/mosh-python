@@ -1,16 +1,42 @@
 import math
 
-letters = ["a", "b", "c"]
 
-letters.append("d")
-letters.insert(0, "-")
-print(letters)
+items = [
+    ("Product1", 10),
+    ("Product2", 9),
+    ("Product3", 12)
+]
 
-letters.pop(0)
-letters.remove("b")
-del letters[0:3]
-letters.clear()
-print(letters)
+
+def sort_item(item):
+    return item[1]
+
+
+items.sort(key=sort_item)
+print(items)
+
+
+# numbers = [3, 51, 2, 8, 6]
+# # numbers.sort(reverse=True)
+# print(sorted(numbers, reverse=True))
+# print(numbers)
+
+
+# letters = ["a", "b", "c"]
+# print(letters.count("d"))
+# if "d" in letters:
+#     print(letters.index("d"))
+
+
+# letters.append("d")
+# letters.insert(0, "-")
+# print(letters)
+
+# letters.pop(0)
+# letters.remove("b")
+# del letters[0:3]
+# letters.clear()
+# print(letters)
 
 
 # for index, letter in enumerate(letters):
