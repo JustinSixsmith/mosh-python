@@ -7,9 +7,16 @@ items = [
     ("Product3", 12)
 ]
 
+filtered = list(filter(lambda item: item[1] >= 10, items))
+print(filtered)
 
-items.sort(key=lambda item: item[1])
-print(items)
+
+# prices = list(map(lambda item: item[1], items))
+# print(prices)
+
+
+# items.sort(key=lambda item: item[1])
+# print(items)
 
 
 # numbers = [3, 51, 2, 8, 6]
