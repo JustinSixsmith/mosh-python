@@ -1,15 +1,18 @@
-import math
-from collections import deque
-from array import array
+# import math
+# from collections import deque
+# from array import array
+from sys import getsizeof
 
+values = (x * 2 for x in range(100000))
+print(len(values))
 
-values = []
-for x in range(5):
-    values.append(x * 2)
-print(values)
+# values = []
+# for x in range(5):
+#     values.append(x * 2)
+# print(values)
 
-values = {x: x * 2 for x in range(5)}
-print(values)
+# values = {x: x * 2 for x in range(5)}
+# print(values)
 
 
 # point = {"x": 1, "y": 2}
