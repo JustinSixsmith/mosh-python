@@ -1,13 +1,30 @@
 import math
 from collections import deque
+from array import array
 
-x = 10
-y = 11
 
-x, y = y, x
+numbers = [1, 1, 2, 3, 4]
+first = set(numbers)
+second = {1, 5}
 
-print("x", x)
-print("y", y)
+print(first | second)
+print(first & second)
+print(first - second)
+print(first ^ second)
+
+if 1 in first:
+    print("yes")
+
+
+# numbers = array("i", [1, 2, 3])
+
+# x = 10
+# y = 11
+
+# x, y = y, x
+
+# print("x", x)
+# print("y", y)
 
 
 # point = (1, 2, 3)
