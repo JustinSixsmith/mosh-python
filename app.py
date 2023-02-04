@@ -3,17 +3,26 @@ from collections import deque
 from array import array
 
 
-point = {"x": 1, "y": 2}
-point = dict(x=1, y=1)
-point["x"] = 10
-point["z"] = 20
-if "a" in point:
-    print(point["a"])
-print(point.get("a", 0))
-del (point["x"])
-print(point)
-for key, value in point.items():
-    print(key, value)
+values = []
+for x in range(5):
+    values.append(x * 2)
+print(values)
+
+values = {x: x * 2 for x in range(5)}
+print(values)
+
+
+# point = {"x": 1, "y": 2}
+# point = dict(x=1, y=1)
+# point["x"] = 10
+# point["z"] = 20
+# if "a" in point:
+#     print(point["a"])
+# print(point.get("a", 0))
+# del (point["x"])
+# print(point)
+# for key, value in point.items():
+#     print(key, value)
 
 
 # numbers = [1, 1, 2, 3, 4]
