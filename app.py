@@ -1,16 +1,31 @@
 import math
 from collections import deque
 
-queue = deque([])
-queue.append(1)
-queue.append(2)
-queue.append(3)
-queue.append(4)
-queue.append(5)
-queue.popleft()
-print(queue)
-if not queue:
-    print("Empty")
+x = 10
+y = 11
+
+x, y = y, x
+
+print("x", x)
+print("y", y)
+
+
+# point = (1, 2, 3)
+# print(point[0:2])
+# x, y, z = point
+# print(y)
+
+
+# queue = deque([])
+# queue.append(1)
+# queue.append(2)
+# queue.append(3)
+# queue.append(4)
+# queue.append(5)
+# queue.popleft()
+# print(queue)
+# if not queue:
+#     print("Empty")
 
 
 # browsing_session = []
