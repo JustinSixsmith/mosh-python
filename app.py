@@ -1,16 +1,28 @@
 import math
+from collections import deque
+
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.append(4)
+queue.append(5)
+queue.popleft()
+print(queue)
+if not queue:
+    print("Empty")
 
 
-browsing_session = []
-browsing_session.append(1)
-browsing_session.append(2)
-browsing_session.append(3)
-browsing_session.append(4)
-browsing_session.append(5)
-for number in range(len(browsing_session)):
-    browsing_session.pop()
-    if browsing_session:
-        print(browsing_session[-1])
+# browsing_session = []
+# browsing_session.append(1)
+# browsing_session.append(2)
+# browsing_session.append(3)
+# browsing_session.append(4)
+# browsing_session.append(5)
+# for number in range(len(browsing_session)):
+#     browsing_session.pop()
+#     if browsing_session:
+#         print(browsing_session[-1])
 
 
 # list1 = [1, 2, 3]
