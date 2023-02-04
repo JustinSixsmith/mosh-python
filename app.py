@@ -1,9 +1,22 @@
 import math
 
-list1 = [1, 2, 3]
-list2 = [10, 20, 30]
 
-print(list(zip("abc", list1, list2)))
+browsing_session = []
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+browsing_session.append(4)
+browsing_session.append(5)
+for number in range(len(browsing_session)):
+    browsing_session.pop()
+    if browsing_session:
+        print(browsing_session[-1])
+
+
+# list1 = [1, 2, 3]
+# list2 = [10, 20, 30]
+
+# print(list(zip("abc", list1, list2)))
 
 
 # items = [
