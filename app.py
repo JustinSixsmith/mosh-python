@@ -1,10 +1,20 @@
 # import math
 # from collections import deque
 # from array import array
-from sys import getsizeof
+# from sys import getsizeof
 
-values = (x * 2 for x in range(100000))
-print(len(values))
+
+first = {"x": 1}
+second = {"x": 10, "y": 20}
+combined = {**first, **second, "z": 1}
+print(combined)
+
+
+# values = (x * 2 for x in range(100000))
+# print("gen:", getsizeof(values))
+# values = [x * 2 for x in range(100000)]
+# print("list:", getsizeof(values))
+
 
 # values = []
 # for x in range(5):
