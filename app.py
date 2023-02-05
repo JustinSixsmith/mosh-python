@@ -2,12 +2,29 @@
 # from collections import deque
 # from array import array
 # from sys import getsizeof
+from pprint import pprint
+
+sentence = "This is a common interview question"
+
+# Put all chars into a dictionary
+char_frequency = {}
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency[char] = 1
+
+# pprint(char_frequency, width=1)
+
+# Convert to a tuples list that can me sorted
+pprint(sorted(char_frequency.items(),
+       key=lambda kv: kv[1], reverse=True), width=20)
 
 
-first = {"x": 1}
-second = {"x": 10, "y": 20}
-combined = {**first, **second, "z": 1}
-print(combined)
+# first = {"x": 1}
+# second = {"x": 10, "y": 20}
+# combined = {**first, **second, "z": 1}
+# print(combined)
 
 
 # values = (x * 2 for x in range(100000))
