@@ -5,16 +5,28 @@
 # from pprint import pprint
 
 
+def calculate_xfactor(age):
+    if age <= 0:
+        raise ValueError("Age cannot be zero or less.")
+    return 10 / age
+
+
 try:
-    with open("app.py") as file:
-        print("File opened.")
-    age = int(input("Age: "))
-    xfactor = 10 / age
-except (ValueError, ZeroDivisionError):
-    print("You didn't enter a valid age.")
-else:
-    print("No exceptions were thrown.")
-print("Excecution continues.")
+    calculate_xfactor(-1)
+except ValueError as error:
+    print(error)
+
+
+# try:
+#     with open("app.py") as file:
+#         print("File opened.")
+#     age = int(input("Age: "))
+#     xfactor = 10 / age
+# except (ValueError, ZeroDivisionError):
+#     print("You didn't enter a valid age.")
+# else:
+#     print("No exceptions were thrown.")
+# print("Excecution continues.")
 
 
 # sentence = "This is a common interview question"
