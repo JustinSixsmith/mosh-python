@@ -2,25 +2,36 @@
 # from collections import deque
 # from array import array
 # from sys import getsizeof
-from pprint import pprint
+# from pprint import pprint
 
-sentence = "This is a common interview question"
 
-# Put all chars into a dictionary
-char_frequency = {}
-for char in sentence:
-    if char in char_frequency:
-        char_frequency[char] += 1
-    else:
-        char_frequency[char] = 1
+try:
+    age = int(input("Age: "))
+except ValueError:
+    print("You didn't enter a valid age.")
 
-# pprint(char_frequency, width=1)
+
+# sentence = "This is a common interview question"
+
+# # Put all chars into a dictionary
+# char_frequency = {}
+# for char in sentence:
+#     if char in char_frequency:
+#         char_frequency[char] += 1
+#     else:
+#         char_frequency[char] = 1
+
+# # Remove spaces
 # char_frequency.pop(" ")
 
-# Convert to a tuples list that can me sorted
-char_frequency_sorted = sorted(char_frequency.items(),
-                               key=lambda kv: kv[1], reverse=True)
-print(char_frequency_sorted[0])
+# # Convert to a tuples list and sort it
+# char_frequency_sorted = sorted(
+#     char_frequency.items(),
+#     key=lambda kv: kv[1],
+#     reverse=True)
+
+# # Print first item in list
+# print(char_frequency_sorted[0])
 
 
 # first = {"x": 1}
