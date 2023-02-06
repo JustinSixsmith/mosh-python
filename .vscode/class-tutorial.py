@@ -1,8 +1,11 @@
 class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
     def draw(self):
-        print("draw")
+        print(f"Point ({self.x}, {self.y})")
 
 
-point = Point()
-print(type(point))
-print(isinstance(point, int))
+point = Point(1, 2)
+point.draw()
