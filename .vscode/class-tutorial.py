@@ -5,16 +5,27 @@ class Point:
         self.x = x
         self.y = y
 
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    @classmethod
+    def zero(cls):
+        return cls(0, 0)
+
     def draw(self):
         print(f"Point ({self.x}, {self.y})")
 
 
-Point.default_color = "yellow"
-point = Point(1, 2)
-print(point.default_color)
-print(Point.default_color)
+point = Point.zero()
 point.draw()
+print(str(point))
 
-another = Point(3, 4)
-print(another.default_color)
-another.draw()
+# Point.default_color = "yellow"
+# point = Point(1, 2)
+# print(point.default_color)
+# print(Point.default_color)
+# point.draw()
+
+# another = Point(3, 4)
+# print(another.default_color)
+# another.draw()
