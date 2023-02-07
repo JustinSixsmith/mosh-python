@@ -1,25 +1,44 @@
-class TagCloud:
-    def __init__(self):
-        self.__tags = {}
+class Product:
+    def __init__(self, price):
+        self.price = price
 
-    def add(self, tag):
-        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+    @property
+    def price(self):
+        return self.__price
 
-    def __getitem__(self, tag):
-        return self.__tags.get(tag.lower(), 0)
-
-    def __setitem__(self, tag, count):
-        self.__tags[tag.lower()] = count
-
-    def __len__(self):
-        return len(self.__tags)
-
-    def __iter__(self):
-        return iter(self.__tags)
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative.")
+        self.__price = value
 
 
-cloud = TagCloud()
-print(cloud._TagCloud__tags)
+product = Product(10)
+product.price = -1
+print(product.price)
+
+# class TagCloud:
+#     def __init__(self):
+#         self.__tags = {}
+
+#     def add(self, tag):
+#         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+
+#     def __getitem__(self, tag):
+#         return self.__tags.get(tag.lower(), 0)
+
+#     def __setitem__(self, tag, count):
+#         self.__tags[tag.lower()] = count
+
+#     def __len__(self):
+#         return len(self.__tags)
+
+#     def __iter__(self):
+#         return iter(self.__tags)
+
+
+# cloud = TagCloud()
+# print(cloud._TagCloud__tags)
 
 
 # class Point:
