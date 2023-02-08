@@ -5,42 +5,68 @@ class InvalidOperationError(Exception):
     pass
 
 
-class Stream(ABC):
-    def __itin__(self):
-        self.opened = False
-
-    def open(self):
-        if self.opened:
-            raise InvalidOperationError("Stream is already open.")
-        self.opened = True
-
-    def open(self):
-        if not self.opened:
-            raise InvalidOperationError("Stream is already closed.")
-        self.opened = False
-
+class UIControl(ABC):
     @abstractclassmethod
-    def read(self):
+    def draw(self):
         pass
 
 
-class FileStream(Stream):
-    def read(self):
-        print("Reading data from a file")
+class TextBox(UIControl):
+    def draw(self):
+        print("TextBox")
 
 
-class NetworkStream(Stream):
-    def read(self):
-        print("Reading data from a network")
+class DropDownList(UIControl):
+    def draw(self):
+        print("DropDownList")
 
 
-class MemoryStream(Stream):
-    def read(self):
-        print("Reading data from a memory stream.")
+def draw(controls):
+    for control in controls:
+        control.draw()
 
 
-stream = MemoryStream()
-stream.read()
+ddl = DropDownList()
+textBox = TextBox()
+draw([ddl, textBox])
+
+
+# class Stream(ABC):
+#     def __itin__(self):
+#         self.opened = False
+
+#     def open(self):
+#         if self.opened:
+#             raise InvalidOperationError("Stream is already open.")
+#         self.opened = True
+
+#     def open(self):
+#         if not self.opened:
+#             raise InvalidOperationError("Stream is already closed.")
+#         self.opened = False
+
+#     @abstractclassmethod
+#     def read(self):
+#         pass
+
+
+# class FileStream(Stream):
+#     def read(self):
+#         print("Reading data from a file")
+
+
+# class NetworkStream(Stream):
+#     def read(self):
+#         print("Reading data from a network")
+
+
+# class MemoryStream(Stream):
+#     def read(self):
+#         print("Reading data from a memory stream.")
+
+
+# stream = MemoryStream()
+# stream.read()
 
 # class Flyer():
 #     pass
