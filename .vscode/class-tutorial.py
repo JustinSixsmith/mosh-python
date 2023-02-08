@@ -1,8 +1,11 @@
+from abc import ABC, abstractclassmethod
+
+
 class InvalidOperationError(Exception):
     pass
 
 
-class Stream:
+class Stream(ABC):
     def __itin__(self):
         self.opened = False
 
@@ -16,6 +19,10 @@ class Stream:
             raise InvalidOperationError("Stream is already closed.")
         self.opened = False
 
+    @abstractclassmethod
+    def read(self):
+        pass
+
 
 class FileStream(Stream):
     def read(self):
@@ -26,132 +33,141 @@ class NetworkStream(Stream):
     def read(self):
         print("Reading data from a network")
 
-    # class Flyer():
-    #     pass
 
-    # class Swimmer():
-    #     pass
+class MemoryStream(Stream):
+    def read(self):
+        print("Reading data from a memory stream.")
 
-    # class FlyingFish(Flyer, Swimmer):
-    #     pass
 
-    # class Employee():
-    #     def greet(self):
-    #         print("Employee Greet")
+stream = MemoryStream()
+stream.read()
 
-    # class Person():
-    #     def greet(self):
-    #         print("Person Greet")
+# class Flyer():
+#     pass
 
-    # class Manager(Employee, Person):
-    #     pass
+# class Swimmer():
+#     pass
 
-    # manager = Manager()
-    # manager.greet()
+# class FlyingFish(Flyer, Swimmer):
+#     pass
 
-    # class Animal:
-    #     def __init__(self):
-    #         self.age = 1
+# class Employee():
+#     def greet(self):
+#         print("Employee Greet")
 
-    #     def eat(self):
-    #         print("eat")
+# class Person():
+#     def greet(self):
+#         print("Person Greet")
 
-    # class Mammal(Animal):
-    #     def __init__(self):
-    #         super().__init__()
-    #         self.weight = 2
+# class Manager(Employee, Person):
+#     pass
 
-    #     def walk(self):
-    #         print("walk")
+# manager = Manager()
+# manager.greet()
 
-    # class Fish(Animal):
-    #     def swim(self):
-    #         print("swim")
+# class Animal:
+#     def __init__(self):
+#         self.age = 1
 
-    # class Bird(Animal):
-    #     def fly(self):
-    #         print("fly")
+#     def eat(self):
+#         print("eat")
 
-    # m = Mammal()
-    # print(m.age)
-    # print(m.weight)
+# class Mammal(Animal):
+#     def __init__(self):
+#         super().__init__()
+#         self.weight = 2
 
-    # class Product:
-    #     def __init__(self, price):
-    #         self.price = price
+#     def walk(self):
+#         print("walk")
 
-    #     @property
-    #     def price(self):
-    #         return self.__price
+# class Fish(Animal):
+#     def swim(self):
+#         print("swim")
 
-    #     @price.setter
-    #     def price(self, value):
-    #         if value < 0:
-    #             raise ValueError("Price cannot be negative.")
-    #         self.__price = value
+# class Bird(Animal):
+#     def fly(self):
+#         print("fly")
 
-    # product = Product(10)
-    # print(product.price)
+# m = Mammal()
+# print(m.age)
+# print(m.weight)
 
-    # class TagCloud:
-    #     def __init__(self):
-    #         self.__tags = {}
+# class Product:
+#     def __init__(self, price):
+#         self.price = price
 
-    #     def add(self, tag):
-    #         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+#     @property
+#     def price(self):
+#         return self.__price
 
-    #     def __getitem__(self, tag):
-    #         return self.__tags.get(tag.lower(), 0)
+#     @price.setter
+#     def price(self, value):
+#         if value < 0:
+#             raise ValueError("Price cannot be negative.")
+#         self.__price = value
 
-    #     def __setitem__(self, tag, count):
-    #         self.__tags[tag.lower()] = count
+# product = Product(10)
+# print(product.price)
 
-    #     def __len__(self):
-    #         return len(self.__tags)
+# class TagCloud:
+#     def __init__(self):
+#         self.__tags = {}
 
-    #     def __iter__(self):
-    #         return iter(self.__tags)
+#     def add(self, tag):
+#         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
 
-    # cloud = TagCloud()
-    # print(cloud._TagCloud__tags)
+#     def __getitem__(self, tag):
+#         return self.__tags.get(tag.lower(), 0)
 
-    # class Point:
-    #     default_color = "red"
+#     def __setitem__(self, tag, count):
+#         self.__tags[tag.lower()] = count
 
-    #     def __init__(self, x, y):
-    #         self.x = x
-    #         self.y = y
+#     def __len__(self):
+#         return len(self.__tags)
 
-    #     def __str__(self):
-    #         return f"({self.x}, {self.y})"
+#     def __iter__(self):
+#         return iter(self.__tags)
 
-    #     def __eq__(self, other):
-    #         return self.x == other.x and self.y == other.y
+# cloud = TagCloud()
+# print(cloud._TagCloud__tags)
 
-    #     def __gt__(self, other):
-    #         return self.x > other.x and self.y > other.y
+# class Point:
+#     default_color = "red"
 
-    #     def __add__(self, other):
-    #         return Point(self.x + other.x, self.y + other.y)
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
 
-    #     @classmethod
-    #     def zero(cls):
-    #         return cls(0, 0)
+#     def __str__(self):
+#         return f"({self.x}, {self.y})"
 
-    #     def draw(self):
-    #         print(f"Point ({self.x}, {self.y})")
+#     def __eq__(self, other):
+#         return self.x == other.x and self.y == other.y
 
-    # point1 = Point(10, 20)
-    # point2 = Point(1, 2)
-    # combined = point1 + point2
-    # print(combined.x)
+#     def __gt__(self, other):
+#         return self.x > other.x and self.y > other.y
 
-    # Point.default_color = "yellow"
-    # point = Point(1, 2)
-    # print(point.default_color)
-    # print(Point.default_color)
-    # point.draw()
+#     def __add__(self, other):
+#         return Point(self.x + other.x, self.y + other.y)
 
-    # another = Point(3, 4)
-    # print(another.default_color)
-    # another.draw()
+#     @classmethod
+#     def zero(cls):
+#         return cls(0, 0)
+
+#     def draw(self):
+#         print(f"Point ({self.x}, {self.y})")
+
+# point1 = Point(10, 20)
+# point2 = Point(1, 2)
+# combined = point1 + point2
+# print(combined.x)
+
+# Point.default_color = "yellow"
+# point = Point(1, 2)
+# print(point.default_color)
+# print(Point.default_color)
+# point.draw()
+
+# another = Point(3, 4)
+# print(another.default_color)
+# another.draw()
