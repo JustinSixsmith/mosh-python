@@ -25,8 +25,8 @@ def calculate_xfactor(age):
     return 10 / age
 
 xfactor = calculate_xfactor(-1)
-# if xfactor == None:
-#     pass
+if xfactor == None:
+    pass
 """
 
 print("first code=", timeit(code1, number=10000))
