@@ -1,133 +1,157 @@
-class Employee():
-    def greet(self):
-        print("Employee Greet")
-
-
-class Person():
-    def greet(self):
-        print("Person Greet")
-
-
-class Manager(Employee, Person):
+class InvalidOperationError(Exception):
     pass
 
 
-manager = Manager()
-manager.greet()
+class Stream:
+    def __itin__(self):
+        self.opened = False
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already open.")
+        self.opened = True
+
+    def open(self):
+        if not self.opened:
+            raise InvalidOperationError("Stream is already closed.")
+        self.opened = False
 
 
-# class Animal:
-#     def __init__(self):
-#         self.age = 1
-
-#     def eat(self):
-#         print("eat")
+class FileStream(Stream):
+    def read(self):
+        print("Reading data from a file")
 
 
-# class Mammal(Animal):
-#     def __init__(self):
-#         super().__init__()
-#         self.weight = 2
+class NetworkStream(Stream):
+    def read(self):
+        print("Reading data from a network")
 
-#     def walk(self):
-#         print("walk")
+    # class Flyer():
+    #     pass
 
+    # class Swimmer():
+    #     pass
 
-# class Fish(Animal):
-#     def swim(self):
-#         print("swim")
+    # class FlyingFish(Flyer, Swimmer):
+    #     pass
 
+    # class Employee():
+    #     def greet(self):
+    #         print("Employee Greet")
 
-# class Bird(Animal):
-#     def fly(self):
-#         print("fly")
+    # class Person():
+    #     def greet(self):
+    #         print("Person Greet")
 
+    # class Manager(Employee, Person):
+    #     pass
 
-# m = Mammal()
-# print(m.age)
-# print(m.weight)
+    # manager = Manager()
+    # manager.greet()
 
+    # class Animal:
+    #     def __init__(self):
+    #         self.age = 1
 
-# class Product:
-#     def __init__(self, price):
-#         self.price = price
+    #     def eat(self):
+    #         print("eat")
 
-#     @property
-#     def price(self):
-#         return self.__price
+    # class Mammal(Animal):
+    #     def __init__(self):
+    #         super().__init__()
+    #         self.weight = 2
 
-#     @price.setter
-#     def price(self, value):
-#         if value < 0:
-#             raise ValueError("Price cannot be negative.")
-#         self.__price = value
+    #     def walk(self):
+    #         print("walk")
 
+    # class Fish(Animal):
+    #     def swim(self):
+    #         print("swim")
 
-# product = Product(10)
-# print(product.price)
+    # class Bird(Animal):
+    #     def fly(self):
+    #         print("fly")
 
-# class TagCloud:
-#     def __init__(self):
-#         self.__tags = {}
+    # m = Mammal()
+    # print(m.age)
+    # print(m.weight)
 
-#     def add(self, tag):
-#         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+    # class Product:
+    #     def __init__(self, price):
+    #         self.price = price
 
-#     def __getitem__(self, tag):
-#         return self.__tags.get(tag.lower(), 0)
+    #     @property
+    #     def price(self):
+    #         return self.__price
 
-#     def __setitem__(self, tag, count):
-#         self.__tags[tag.lower()] = count
+    #     @price.setter
+    #     def price(self, value):
+    #         if value < 0:
+    #             raise ValueError("Price cannot be negative.")
+    #         self.__price = value
 
-#     def __len__(self):
-#         return len(self.__tags)
+    # product = Product(10)
+    # print(product.price)
 
-#     def __iter__(self):
-#         return iter(self.__tags)
+    # class TagCloud:
+    #     def __init__(self):
+    #         self.__tags = {}
 
+    #     def add(self, tag):
+    #         self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
 
-# cloud = TagCloud()
-# print(cloud._TagCloud__tags)
+    #     def __getitem__(self, tag):
+    #         return self.__tags.get(tag.lower(), 0)
 
+    #     def __setitem__(self, tag, count):
+    #         self.__tags[tag.lower()] = count
 
-# class Point:
-#     default_color = "red"
+    #     def __len__(self):
+    #         return len(self.__tags)
 
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
+    #     def __iter__(self):
+    #         return iter(self.__tags)
 
-#     def __str__(self):
-#         return f"({self.x}, {self.y})"
+    # cloud = TagCloud()
+    # print(cloud._TagCloud__tags)
 
-#     def __eq__(self, other):
-#         return self.x == other.x and self.y == other.y
+    # class Point:
+    #     default_color = "red"
 
-#     def __gt__(self, other):
-#         return self.x > other.x and self.y > other.y
+    #     def __init__(self, x, y):
+    #         self.x = x
+    #         self.y = y
 
-#     def __add__(self, other):
-#         return Point(self.x + other.x, self.y + other.y)
+    #     def __str__(self):
+    #         return f"({self.x}, {self.y})"
 
-#     @classmethod
-#     def zero(cls):
-#         return cls(0, 0)
+    #     def __eq__(self, other):
+    #         return self.x == other.x and self.y == other.y
 
-#     def draw(self):
-#         print(f"Point ({self.x}, {self.y})")
+    #     def __gt__(self, other):
+    #         return self.x > other.x and self.y > other.y
 
+    #     def __add__(self, other):
+    #         return Point(self.x + other.x, self.y + other.y)
 
-# point1 = Point(10, 20)
-# point2 = Point(1, 2)
-# combined = point1 + point2
-# print(combined.x)
+    #     @classmethod
+    #     def zero(cls):
+    #         return cls(0, 0)
 
-# Point.default_color = "yellow"
-# point = Point(1, 2)
-# print(point.default_color)
-# print(Point.default_color)
-# point.draw()
+    #     def draw(self):
+    #         print(f"Point ({self.x}, {self.y})")
 
-# another = Point(3, 4)
-# print(another.default_color)
-# another.draw()
+    # point1 = Point(10, 20)
+    # point2 = Point(1, 2)
+    # combined = point1 + point2
+    # print(combined.x)
+
+    # Point.default_color = "yellow"
+    # point = Point(1, 2)
+    # print(point.default_color)
+    # print(Point.default_color)
+    # point.draw()
+
+    # another = Point(3, 4)
+    # print(another.default_color)
+    # another.draw()
