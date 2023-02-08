@@ -1,34 +1,51 @@
-
-class Animal:
-    def __init__(self):
-        self.age = 1
-
-    def eat(self):
-        print("eat")
+class Employee():
+    def greet(self):
+        print("Employee Greet")
 
 
-class Mammal(Animal):
-    def __init__(self):
-        super().__init__()
-        self.weight = 2
-
-    def walk(self):
-        print("walk")
+class Person():
+    def greet(self):
+        print("Person Greet")
 
 
-class Fish(Animal):
-    def swim(self):
-        print("swim")
+class Manager(Employee, Person):
+    pass
 
 
-class Bird(Animal):
-    def fly(self):
-        print("fly")
+manager = Manager()
+manager.greet()
 
 
-m = Mammal()
-print(m.age)
-print(m.weight)
+# class Animal:
+#     def __init__(self):
+#         self.age = 1
+
+#     def eat(self):
+#         print("eat")
+
+
+# class Mammal(Animal):
+#     def __init__(self):
+#         super().__init__()
+#         self.weight = 2
+
+#     def walk(self):
+#         print("walk")
+
+
+# class Fish(Animal):
+#     def swim(self):
+#         print("swim")
+
+
+# class Bird(Animal):
+#     def fly(self):
+#         print("fly")
+
+
+# m = Mammal()
+# print(m.age)
+# print(m.weight)
 
 
 # class Product:
