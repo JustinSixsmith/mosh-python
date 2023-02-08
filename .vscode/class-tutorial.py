@@ -5,30 +5,48 @@ class InvalidOperationError(Exception):
     pass
 
 
-class UIControl(ABC):
-    @abstractclassmethod
-    def draw(self):
-        pass
+class Text(str):
+    def duplicate(self):
+        return self + self
 
 
-class TextBox(UIControl):
-    def draw(self):
-        print("TextBox")
+class TrackableList(list):
+    def append(self, object):
+        print("Append called")
+        super().append(object)
 
 
-class DropDownList(UIControl):
-    def draw(self):
-        print("DropDownList")
+text = Text("Python")
+print(text.duplicate())
+
+list = TrackableList()
+list.append("1")
 
 
-def draw(controls):
-    for control in controls:
-        control.draw()
+# class UIControl(ABC):
+#     @abstractclassmethod
+#     def draw(self):
+#         pass
 
 
-ddl = DropDownList()
-textBox = TextBox()
-draw([ddl, textBox])
+# class TextBox(UIControl):
+#     def draw(self):
+#         print("TextBox")
+
+
+# class DropDownList(UIControl):
+#     def draw(self):
+#         print("DropDownList")
+
+
+# def draw(controls):
+#     for control in controls:
+#         control.draw()
+
+
+# ddl = DropDownList()
+# textBox = TextBox()
+# draw([ddl, textBox])
 
 
 # class Stream(ABC):
