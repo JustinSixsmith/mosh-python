@@ -1,7 +1,6 @@
-from ecommerce.shopping import sales
+from pathlib import Path
 
+path = Path("ecommerce")
 
-# print(dir(sales))
-# print(sales.__name__)
-# print(sales.__package__)
-# print(sales.__file__)P
+paths = [p for p in path.iterdir()]
+print(paths)
