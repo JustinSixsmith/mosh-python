@@ -5,17 +5,31 @@ from pathlib import Path
 # import csv
 import json
 import sqlite3
+import time
+
+
+def send_emails():
+    for i in range(10000):
+        pass
+
+
+start = time.time()
+send_emails()
+end = time.time()
+duration = end - start
+print(duration)
+
 
 # movies = json.loads(Path("movies.json").read_text())
 # print(movies)
 
-with sqlite3.connect("db.sqlite3") as conn:
-    command = "SELECT * FROM Movies"
-    cursor = conn.execute(command)
-    # for row in cursor:
-    #     print(row)
-    movies = cursor.fetchall()
-    print(movies)
+# with sqlite3.connect("db.sqlite3") as conn:
+#     command = "SELECT * FROM Movies"
+#     cursor = conn.execute(command)
+#     # for row in cursor:
+#     #     print(row)
+#     movies = cursor.fetchall()
+#     print(movies)
 
 
 # movies = [
