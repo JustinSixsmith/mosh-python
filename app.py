@@ -9,16 +9,21 @@ import time
 from datetime import datetime, timedelta
 import random
 import string
+import webbrowser
 
-print(random.random())
-print(random.randint(1, 10))
-print(random.choice([1, 2, 3, 4]))
-print(random.choices([1, 2, 3, 4], k=2))
-print("".join(random.choices(string.ascii_letters + string.digits, k=4)))
 
-numbers = [1, 2, 3, 4]
-random.shuffle(numbers)
-print(numbers)
+print("Deployment completed")
+webbrowser.open("http://google.com")
+
+# print(random.random())
+# print(random.randint(1, 10))
+# print(random.choice([1, 2, 3, 4]))
+# print(random.choices([1, 2, 3, 4], k=2))
+# print("".join(random.choices(string.ascii_letters + string.digits, k=4)))
+
+# numbers = [1, 2, 3, 4]
+# random.shuffle(numbers)
+# print(numbers)
 
 
 # dt1 = datetime(2018, 1, 1) + timedelta(days=1, seconds=1000)
