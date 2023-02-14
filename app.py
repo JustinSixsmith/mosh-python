@@ -6,18 +6,29 @@ from pathlib import Path
 import json
 import sqlite3
 import time
+from datetime import datetime
+
+dt1 = datetime(2023, 2, 14)
+dt2 = datetime.now()
+dt = datetime.strptime("2023/02/14", "%Y/%m/%d")
+datetime.fromtimestamp(time.time())
+
+print(f"{dt.year}/{dt.month}")
+print(dt.strftime("%Y/%m"))
+
+print(dt2 > dt1)
 
 
-def send_emails():
-    for i in range(10000):
-        pass
+# def send_emails():
+#     for i in range(10000):
+#         pass
 
 
-start = time.time()
-send_emails()
-end = time.time()
-duration = end - start
-print(duration)
+# start = time.time()
+# send_emails()
+# end = time.time()
+# duration = end - start
+# print(duration)
 
 
 # movies = json.loads(Path("movies.json").read_text())
