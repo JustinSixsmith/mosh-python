@@ -1,14 +1,23 @@
 # from time import ctime
 # import shutil
-# from pathlib import Path
+from pathlib import Path
 # from zipfile import ZipFile
-import csv
+# import csv
+import json
 
-with open("data.csv") as file:
-    reader = csv.reader(file)
-    # print(list(reader))
-    for row in reader:
-        print(row)
+movies = [
+    {"id": 1, "title": "Terminator", "year": 1989},
+    {"id": 2, "title": "Kindergarten Cop", "year": 1993}
+]
+
+data = json.dumps(movies)
+Path("movies.json").write_text(data)
+
+# with open("data.csv") as file:
+#     reader = csv.reader(file)
+#     # print(list(reader))
+#     for row in reader:
+#         print(row)
 
 
 # with ZipFile("files.zip", "w") as zip:
