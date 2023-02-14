@@ -16,12 +16,26 @@ from email.mime.image import MIMEImage
 from string import Template
 import smtplib
 import sys
+import subprocess
 
-if len(sys.argv) == 1:
-    print("USAGE: python3 app.py <password>")
-else:
-    password = sys.argv[1]
-    print("Password", password)
+try:
+    completed = subprocess.run(["python3", "other.py"],
+                               capture_output=True,
+                               text=True,
+                               check=True)
+    print("args", completed.args)
+    print("returncode", completed.returncode)
+    print("stderr", completed.stderr)
+    print("stdout", completed.stdout)
+except subprocess.CalledProcessError as ex:
+    print(ex)
+
+
+# if len(sys.argv) == 1:
+#     print("USAGE: python3 app.py <password>")
+# else:
+#     password = sys.argv[1]
+#     print("Password", password)
 
 # template = Template(Path("template.html").read_text())
 
