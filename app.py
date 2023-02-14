@@ -4,14 +4,29 @@ from pathlib import Path
 # from zipfile import ZipFile
 # import csv
 import json
+import sqlite3
 
-movies = [
-    {"id": 1, "title": "Terminator", "year": 1989},
-    {"id": 2, "title": "Kindergarten Cop", "year": 1993}
-]
+# movies = json.loads(Path("movies.json").read_text())
+# print(movies)
 
-data = json.dumps(movies)
-Path("movies.json").write_text(data)
+with sqlite3.connect("db.sqlite3") as conn:
+    command = "SELECT * FROM Movies"
+    cursor = conn.execute(command)
+    # for row in cursor:
+    #     print(row)
+    movies = cursor.fetchall()
+    print(movies)
+
+
+# movies = [
+#     {"id": 1, "title": "Terminator", "year": 1989},
+#     {"id": 2, "title": "Kindergarten Cop", "year": 1993}
+# ]
+# data = json.dumps(movies)
+
+# data = Path("movies.json").read_text()
+# movies = json.loads(data)
+# print(movies[0]["title"])
 
 # with open("data.csv") as file:
 #     reader = csv.reader(file)
