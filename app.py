@@ -15,24 +15,31 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from string import Template
 import smtplib
+import sys
 
-template = Template(Path("template.html").read_text())
+if len(sys.argv) == 1:
+    print("USAGE: python3 app.py <password>")
+else:
+    password = sys.argv[1]
+    print("Password", password)
+
+# template = Template(Path("template.html").read_text())
 
 
-message = MIMEMultipart()
-message["from"] = "Justin Sixsmith"
-message["to"] = "testuser@codewithmosh.com"
-message["subject"] = "This is a test"
-body = template.substitute({"name": "John"})
-message.attach(MIMEText(body, "html"))
-message.attach(MIMEImage(Path("justin.jpeg").read_bytes()))
+# message = MIMEMultipart()
+# message["from"] = "Justin Sixsmith"
+# message["to"] = "testuser@codewithmosh.com"
+# message["subject"] = "This is a test"
+# body = template.substitute(name="John")
+# message.attach(MIMEText(body, "html"))
+# message.attach(MIMEImage(Path("justin.jpeg").read_bytes()))
 
-with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
-    smtp.ehlo()
-    smtp.starttls()
-    smtp.login("testuser@codewithmosh.com", "todayskyisblue1234")
-    smtp.send_message(message)
-    print("Sent...")
+# with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
+#     smtp.ehlo()
+#     smtp.starttls()
+#     smtp.login("testuser@codewithmosh.com", "todayskyisblue1234")
+#     smtp.send_message(message)
+#     print("Sent...")
 
 
 # print("Deployment completed")
