@@ -6,17 +6,24 @@ from pathlib import Path
 import json
 import sqlite3
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
-dt1 = datetime(2023, 2, 14)
+dt1 = datetime(2018, 1, 1) + timedelta(days=1, seconds=1000)
+print(dt1)
 dt2 = datetime.now()
-dt = datetime.strptime("2023/02/14", "%Y/%m/%d")
-datetime.fromtimestamp(time.time())
+duration = dt2 - dt1
+print(duration)
+print("days", duration.days)
+print("seconds", duration.seconds)
+print("total seconds", duration.total_seconds())
 
-print(f"{dt.year}/{dt.month}")
-print(dt.strftime("%Y/%m"))
+# dt = datetime.strptime("2023/02/14", "%Y/%m/%d")
+# datetime.fromtimestamp(time.time())
 
-print(dt2 > dt1)
+# print(f"{dt.year}/{dt.month}")
+# print(dt.strftime("%Y/%m"))
+
+# print(dt2 > dt1)
 
 
 # def send_emails():
