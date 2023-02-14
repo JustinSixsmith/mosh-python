@@ -7,15 +7,28 @@ import json
 import sqlite3
 import time
 from datetime import datetime, timedelta
+import random
+import string
 
-dt1 = datetime(2018, 1, 1) + timedelta(days=1, seconds=1000)
-print(dt1)
-dt2 = datetime.now()
-duration = dt2 - dt1
-print(duration)
-print("days", duration.days)
-print("seconds", duration.seconds)
-print("total seconds", duration.total_seconds())
+print(random.random())
+print(random.randint(1, 10))
+print(random.choice([1, 2, 3, 4]))
+print(random.choices([1, 2, 3, 4], k=2))
+print("".join(random.choices(string.ascii_letters + string.digits, k=4)))
+
+numbers = [1, 2, 3, 4]
+random.shuffle(numbers)
+print(numbers)
+
+
+# dt1 = datetime(2018, 1, 1) + timedelta(days=1, seconds=1000)
+# print(dt1)
+# dt2 = datetime.now()
+# duration = dt2 - dt1
+# print(duration)
+# print("days", duration.days)
+# print("seconds", duration.seconds)
+# print("total seconds", duration.total_seconds())
 
 # dt = datetime.strptime("2023/02/14", "%Y/%m/%d")
 # datetime.fromtimestamp(time.time())
